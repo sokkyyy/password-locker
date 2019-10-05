@@ -53,9 +53,16 @@ def display_credentials(username):
     '''
     return Credentials.display_credentials(username)
 
+def find_by_name(socialMedia):
+    '''
+    Function to find credential using social media name.
+    '''
+    return Credentials.find_by_name(socialMedia)
+
 def main():
     print("HELLO!! Welcome to Password locker, An application to manage your social media passwords")
     print('\n')
+    
     while True:
         print("-"*60)
         print('Use these short codes:\n ca --> To create an account \n lg --> To log into your account \n ex --> To exit')
@@ -162,6 +169,16 @@ def main():
                             print('You don\'t have any credentials.')
                     
                     elif password_option == 'del':
+                        print('Enter the Name of the social media you want to delete')
+                        social = input()
+                        if find_by_name(social):
+                            delete_credentials(find_by_name(social))
+                            print('Credential has been deleted.')
+                        else:
+                            print('You dont a credential of the specified name.')
+
+
+
 
 
                         

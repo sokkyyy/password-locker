@@ -48,4 +48,13 @@ class Credentials():
         '''
         password = ''.join(random.choice(char) for _ in range(passwordLength))
         return password
+    
+    @classmethod
+    def find_by_name(cls, media):
+        '''
+        Find by social media name method that will return the credential based on its social media name.
+        '''
+        for credential in cls.credential_list:
+            if credential.social_media == media:
+                return credential 
         

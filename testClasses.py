@@ -122,6 +122,19 @@ class TestCredentials(unittest.TestCase):
         gmail.password = Credentials.generate_password() 
 
         self.assertTrue(gmail.password)
+    
+    def test_find_by_name(self):
+        '''
+        Test method to find credential by name.
+        '''
+        self.new_credentials.save_credentials()
+        
+        found_credential = Credentials.find_by_name(self.new_credentials.social_media) 
+
+        self.assertEqual(self.new_credentials, found_credential)
+         
+
+
 
 
 
