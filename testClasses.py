@@ -3,7 +3,7 @@ from user import User
 from credentials import Credentials
 
 
-class TestClasses(unittest.TestCase):
+class TestUser(unittest.TestCase):
     '''
     Class used to test the User and Credential Classes.
     '''
@@ -65,6 +65,8 @@ class TestClasses(unittest.TestCase):
         correct_user_info = User.login_authentication("sokkyyy","king2020") 
         self.assertTrue(correct_user_info)
 
+
+class TestCredentials(unittest.TestCase):
     
 
 
