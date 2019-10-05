@@ -112,7 +112,7 @@ def main():
                     print('Use these short codes:')
                     print('cc --> create credentials \n dc --> display credentials \n del --> delete credentials \n lo --> log out')
                     short_code = input()
- 
+  
                     if short_code == 'lo':
                         print('-'*60)
                         print(f'Goodbye {user.username}')
