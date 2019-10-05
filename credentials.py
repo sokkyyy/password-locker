@@ -1,3 +1,6 @@
+import string
+import random
+
 
 class Credentials():
 
@@ -37,3 +40,13 @@ class Credentials():
             if credential.username == username:
                 user_credentials.append(credential)
         return user_credentials
+    
+    @classmethod
+    def generate_password(cls, passwordLength=7, char=string.ascii_letters+string.digits):
+        '''
+        Generate password method that will generate an alphanumeric password if the user needs one.
+        '''
+        password = ''.join(random.choice(char) for _ in range(passwordLength))
+        print(password)
+        return password
+        

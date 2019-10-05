@@ -113,9 +113,17 @@ class TestCredentials(unittest.TestCase):
         instagram = Credentials('sokkyyy','Insta','superman','password')
         instagram.save_credentials()
 
-        instagram.delete_credentials()
+        instagram.delete_credentials() 
         self.assertEqual(len(Credentials.credential_list), 1)
+    
+    def test_generate_password(self):
+        '''
+        Test method that will check if a password is generated for the user if they wish.
+        '''
+        gmail = Credentials('superman','Gmail', "sups@gmail.com",'')
+        gmail.password = Credentials.generate_password() 
 
+        self.assertTrue(gmail.password)
 
 
 
