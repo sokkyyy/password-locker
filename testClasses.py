@@ -84,10 +84,42 @@ class TestCredentials(unittest.TestCase):
         Test method to check if credentials are saved in the credential list.
         '''
         self.new_credentials.save_credentials()
-        tinder = Credentials('sokkyyy','Insta','superman','password')
-        tinder.save_credentials()
+        instagram = Credentials('sokkyyy','Insta','superman','password')
+        instagram.save_credentials()
 
         self.assertEqual(len(Credentials.credential_list), 2)
+    
+    def tearDown(self):
+        '''
+        Tear Down method that cleans up the credential list after each test.
+        '''
+        Credentials.credential_list = []
+    
+    def test_display_credentials(self):
+        '''
+        Test method to check if correct credentials are displayed for specific user.
+        '''
+        self.new_credentials.save_credentials()
+        instagram = Credentials('sokkyyy','Insta','superman','password')
+        instagram.save_credentials()
+
+        self.assertEqual(len(Credentials.display_credentials(instagram.username)), 2) 
+    
+    def test_delete_credentials(self):
+        '''
+        Test method to check if correct credential is removed from credential list.
+        '''
+        self.new_credentials.save_credentials()
+        instagram = Credentials('sokkyyy','Insta','superman','password')
+        instagram.save_credentials()
+
+        instagram.delete_credentials()
+        self.assertEqual(len(Credentials.credential_list), 1)
+
+
+
+
+
      
 
     

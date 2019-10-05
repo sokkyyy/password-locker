@@ -1,6 +1,5 @@
-from user import User
 
-class Credentials(User):
+class Credentials():
 
     credential_list = []
 
@@ -21,3 +20,20 @@ class Credentials(User):
         Save credentials method that will save credentials to the credential list.
         '''
         Credentials.credential_list.append(self)
+    
+    def delete_credentials(self):
+        '''
+        Delete credentials method that will remove specific credentials from credential list.
+        '''
+        Credentials.credential_list.remove(self)
+
+    @classmethod
+    def display_credentials(cls, username):
+        '''
+        Display credentials method that will display a specific user's credentials.
+        '''
+        user_credentials = []
+        for credential in cls.credential_list:
+            if credential.username == username:
+                user_credentials.append(credential)
+        return user_credentials
