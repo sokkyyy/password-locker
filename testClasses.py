@@ -31,8 +31,10 @@ class TestUser(unittest.TestCase):
         Test method to check if user is saved successfully
         '''
         self.new_user.save_user() 
+        user2 = User('Martin', 'Maina', 'marto','king2020')
+        user2.save_user()
 
-        self.assertEqual(len(User.user_list), 1)
+        self.assertEqual(len(User.user_list), 2)
     
     def tearDown(self):
         '''
@@ -77,6 +79,16 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.social_username, 'ndegwaRay')
         self.assertEqual(self.new_credentials.password, 'pass2019')
     
+    def test_save_credentials(self):
+        '''
+        Test method to check if credentials are saved in the credential list.
+        '''
+        self.new_credentials.save_credentials()
+        tinder = Credentials('sokkyyy','Insta','superman','password')
+        tinder.save_credentials()
+
+        self.assertEqual(len(Credentials.credential_list), 2)
+     
 
     
 
