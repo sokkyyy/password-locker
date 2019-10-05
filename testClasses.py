@@ -12,8 +12,7 @@ class TestUser(unittest.TestCase):
         '''
         setUp Function that will create a new user and new credential instances and run before any test case.
         '''
-        self.new_user = User('Raymond','Ndegwa','sokkyyy','king2020', [])
-        self.new_credentials = Credentials('Twitter','sokkyyy','pass2019')
+        self.new_user = User('Raymond','Ndegwa','sokkyyy','king2020')
     
     def test_user_init(self):
         '''
@@ -24,15 +23,8 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.lName, "Ndegwa")
         self.assertEqual(self.new_user.username, "sokkyyy")
         self.assertEqual(self.new_user.password, "king2020")
-        self.assertEqual(self.new_user.credentials, [])
     
-    def test_credential_init(self):
-        '''
-        Test method to check if user credentials are initialized properly.
-        '''
-        self.assertEqual(self.new_credentials.social_account, 'Twitter')
-        self.assertEqual(self.new_credentials.handle_username, 'sokkyyy')
-        self.assertEqual(self.new_credentials.password, 'pass2019')
+
 
     def test_save_user(self):
         '''
@@ -61,7 +53,23 @@ class TestCredentials(unittest.TestCase):
     '''
     Test Class to test the Credentials class.
     '''
-    def __init__()
+    def setUp(self):
+        '''
+        setUp method to create new instance of a credential object before each test.
+        '''
+        
+        self.new_credentials = Credentials('sokkyyy','Twitter','ndegwaRay','pass2019')
+    
+    def test_credential_init(self):
+        '''
+        Test method to check if user credentials are initialized properly.
+        '''
+        self.assertEqual(self.new_credentials.username, 'sokkyyy')
+        self.assertEqual(self.new_credentials.social_media, 'Twitter')
+        self.assertEqual(self.new_credentials.social_username, 'ndegwaRay')
+        self.assertEqual(self.new_credentials.password, 'pass2019')
+    
+
     
 
 
