@@ -5,7 +5,7 @@ from credentials import Credentials
 
 class TestUser(unittest.TestCase):
     '''
-    Class used to test the User and Credential Classes.
+    Class used to test User class.
     '''
 
     def setUp(self):
@@ -42,15 +42,6 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(len(User.user_list), 1)
     
-    # Continue from HERE
-    def test_save_credentials(self):
-        '''
-        Test method to check if the user credentials are saved to their user information.
-        '''
-        credentials = self.new_credentials.save_credentials()
-        print(credentials)  
-        self.assertEqual(len(User.user_list.credentials), 1)
-    
     def tearDown(self):
         '''
         tearDown method that does clean up after each test case has run
@@ -67,6 +58,10 @@ class TestUser(unittest.TestCase):
 
 
 class TestCredentials(unittest.TestCase):
+    '''
+    Test Class to test the Credentials class.
+    '''
+    def __init__()
     
 
 
