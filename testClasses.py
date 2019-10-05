@@ -24,8 +24,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.username, "sokkyyy")
         self.assertEqual(self.new_user.password, "king2020")
     
-
-
     def test_save_user(self):
         '''
         Test method to check if user is saved successfully

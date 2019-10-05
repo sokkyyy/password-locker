@@ -47,6 +47,5 @@ class Credentials():
         Generate password method that will generate an alphanumeric password if the user needs one.
         '''
         password = ''.join(random.choice(char) for _ in range(passwordLength))
-        print(password)
         return password
         
