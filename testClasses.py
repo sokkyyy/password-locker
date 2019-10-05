@@ -45,8 +45,16 @@ class TestUser(unittest.TestCase):
         Test method that will check if the username is correctly authenticated.
         '''
         self.new_user.save_user()
-        correct_user_info = User.login_authentication("sokkyyy","king2020") 
-        self.assertTrue(correct_user_info)
+        user2 = User('Martin', 'Maina', 'marto','king2020')
+        user2.save_user()
+
+    
+        for user in User.user_list:
+            if user.password == user2.password and user.username == user2.username:
+                current_user = user
+                return current_user
+        
+        self.assertEqual(current_user, User.login_authentication(user2.username, user2.password))
 
 
 class TestCredentials(unittest.TestCase):

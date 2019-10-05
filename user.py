@@ -39,8 +39,7 @@ class User:
         '''
         for user in cls.user_list:
             if user.username == name and user.password == password:
-                return True
-            return False
+                return user
         
     
 
