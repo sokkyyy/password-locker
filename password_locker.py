@@ -101,7 +101,7 @@ def main():
 
             user = authenticate_user(username, password)
 
-            if user:
+            if user: 
                 print('-'*60)
                 print(f'Welcome {user.username}')
                 print('-'*60)
