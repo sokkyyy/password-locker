@@ -169,7 +169,9 @@ def main():
                     elif short_code == 'dc':
                         print('-'*60)
                         if display_credentials(user.username):
+                            
                             print('Your social media credentials include:')
+                            print('\n')
 
                             count = 0
                             for credential in display_credentials(user.username):
@@ -188,7 +190,9 @@ def main():
                         if find_by_name(social):
                             delete_credentials(find_by_name(social))
                             print('-'*60)
+                            print('\n')
                             print('Credential has been deleted.')
+                            print('\n')
                             print('-'*60)
                         else:
                             print('-'*60)
