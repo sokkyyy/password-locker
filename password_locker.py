@@ -202,7 +202,9 @@ def main():
                         print('Please use only the short codes that you have been provided')
             else:
                 print('-'*60)
+                print('\n')
                 print('The user information you entered doesn\'t exist. Enter correct log-in credentials.')
+                print('\n')
         else:
             print('-'*60)
             print('Please use only the short codes that you have been provided')
