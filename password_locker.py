@@ -207,7 +207,9 @@ def main():
                 print('\n')
         else:
             print('-'*60)
+            print('\n')
             print('Please use only the short codes that you have been provided')
+            print('\n')
 
 
 
