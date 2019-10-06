@@ -161,7 +161,9 @@ def main():
                         
                         save_credentials(create_credentials(user.username, social_media, username, password))
                         print('-'*60)
+                        print('\n')
                         print(f'Credentials for "{social_media}" with username "{username}" and password "{password}" has been created.')
+                        print('\n')
                         print('-'*60)
                     
                     elif short_code == 'dc':
@@ -191,7 +193,6 @@ def main():
                         else:
                             print('-'*60)
                             print('You dont a credential of the specified name.')
-                            
                     else: 
                         print('-'*60)
                         print('Please use only the short codes that you have been provided')
