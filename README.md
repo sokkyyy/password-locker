@@ -32,5 +32,30 @@ To run the application in the Terminal:
 ```
 $ chmod +x password_locker.py
 $ ./password_locker.py
-
 ```
+### Commands for the System
+| Short Code | Meaning                | 
+|------------|------------------------|
+| ca         |create account          |
+| lg         |log in                  |
+| ex         |exit the system         |
+| cc         |create new credentials  | 
+| dc         |display credentials     |
+| del        |delete credentials      |
+| lo         |log out                 |
+| gen        | generetae password     |
+| ent        | enter your own password|
+## Running Tests
+In order to run tests for the system, in your Terminal run:
+```
+$ python3.6 testClasses.py
+```
+
+## Built With
+* Python 3.6
+
+## Author
+* **Raymond Ndegwa** - [GitHub](https://github.com/sokkyyy).
+
+## Acknowledgement
+* Moringa School.
