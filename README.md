@@ -40,10 +40,11 @@ $ ./password_locker.py
 | lg         |log in                  |
 | ex         |exit the system         |
 | cc         |create new credentials  | 
-| dc         |display credentials     |
+| dc         | display credentials    |
+| cop        | copy  password         |
 | del        |delete credentials      |
 | lo         |log out                 |
-| gen        | generetae password     |
+| gen        | generete password      |
 | ent        | enter your own password|
 ## Running Tests
 In order to run tests for the system, in your Terminal run:

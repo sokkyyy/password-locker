@@ -1,6 +1,6 @@
 import string
 import random
-
+import pyperclip
 
 class Credentials():
 
@@ -34,6 +34,12 @@ class Credentials():
     def display_credentials(cls, username):
         '''
         Display credentials method that will display a specific user's credentials.
+
+        Args:
+            Username: Username to find specific credentials for a single user.
+
+        Returns:
+            User_credentials: List of a user's social credentials.
         '''
         user_credentials = []
         for credential in cls.credential_list:
@@ -45,6 +51,9 @@ class Credentials():
     def generate_password(cls, passwordLength=7, char=string.ascii_letters+string.digits):
         '''
         Generate password method that will generate an alphanumeric password if the user needs one.
+        
+        Returns:
+            password: A randomly generated password.
         '''
         password = ''.join(random.choice(char) for _ in range(passwordLength))
         return password
@@ -53,8 +62,28 @@ class Credentials():
     def find_by_name(cls, media):
         '''
         Find by social media name method that will return the credential based on its social media name.
+
+        Args:
+            Media: The social media account you want to find
+        
+        Returns:
+            dict: A credential dictionary that matches the media argument.
         '''
         for credential in cls.credential_list:
             if credential.social_media == media:
-                return credential 
+                return credential
+
+    @classmethod
+    def copy_password(cls, social_media):
+        '''
+        Copy password method to copy the desired social media password.
+        
+        Args:
+            Social media: The social media account you want to copy the password for.
+        '''
+        credential_found = cls.find_by_name(social_media)
+
+        if credential_found:
+            pyperclip.copy(credential_found.password)
+
         

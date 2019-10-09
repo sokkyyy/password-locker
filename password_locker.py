@@ -59,6 +59,12 @@ def find_by_name(socialMedia):
     '''
     return Credentials.find_by_name(socialMedia)
 
+def copy_password(social_media):
+    '''
+    Copy password function that will copy the password for a particular social media account.
+    '''
+    return Credentials.copy_password(social_media)
+
 #main function to execute the application
 def main():
     print("-"*120)
@@ -124,7 +130,7 @@ def main():
                 
                 while True:
                     print('Use these short codes:')
-                    print(' cc --> create credentials \n dc --> display credentials \n del --> delete credentials \n lo --> log out')
+                    print(' cc --> create credentials \n dc --> display credentials \n cop ---> copy password \n del --> delete credentials \n lo --> log out')
                     print('-'*60)
                     short_code = input().lower()
   
@@ -182,6 +188,22 @@ def main():
                             print('-'*60)
                             print('You don\'t have any credentials.')
                             print('-'*60)
+                    
+                    elif short_code == 'cop':
+                        print('-'*60)
+                        print('Enter the Social Media Account to copy the password:')
+                        social = input()
+
+                        if find_by_name(social):
+                            copy_password(social)
+                            print('-'*60)
+                            print('Your password has been copied')
+                            print('-'*60)
+                        else:
+                            print('-'*60)
+                            print('Social Media account is not in your Saved credentials. ')
+                            print('-'*60)
+
                     
                     elif short_code == 'del':
                         print('-'*60)
