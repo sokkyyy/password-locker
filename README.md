@@ -11,7 +11,7 @@ Users can:
 * Store their existing social media credentials.
 * Create new social media credentials and use automatically generated passwords or enter their own password.
 * View a list of their credentials if they have saved them.
-* Copy the password for credential.
+* Copy the password for a credential.
 * Delete the credentials they no longer need.
 
 ## Getting Started
